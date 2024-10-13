@@ -23,10 +23,10 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
+        'vue-router'
       ],
       eslintrc: {
-        enabled: true,
+        enabled: true
       }
     })
   ],
@@ -42,10 +42,10 @@ export default defineConfig({
       '.mjs',
       '.ts',
       '.tsx',
-      '.vue',
-    ],
+      '.vue'
+    ]
   },
   server: {
-    port: 3000,
-  },
+    port: 3000
+  }
 })

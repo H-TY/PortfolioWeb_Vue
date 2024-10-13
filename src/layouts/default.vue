@@ -1,6 +1,9 @@
 <template>
-  123
+  <div class="container-fluid p-0">
 
+  </div>
+
+  <!-- 渲染 pages 位置 -->
   <RouterView />
 </template>
 
@@ -12,6 +15,4 @@
 
 
 
-<style scoped>
-
-</style>
+<style scoped></style>

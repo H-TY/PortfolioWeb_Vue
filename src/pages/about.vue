@@ -18,7 +18,7 @@ definePage({
 
 <style scoped></style>
 
-<route lang="yaml">
+<!-- <route lang="yaml">
   meta:
-    layout: default
-</route>
+    layout: 
+</route> -->
