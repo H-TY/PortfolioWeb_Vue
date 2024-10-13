@@ -1,1 +1,0 @@
-import{_ as t,r,o as n,c as a,a as s,b as c,F as _}from"./index-CM-K1p1w.js";const l={};function f(m,e){const o=r("RouterView");return n(),a(_,null,[e[0]||(e[0]=s(" 123 ")),c(o)],64)}const d=t(l,[["render",f]]);export{d as default};

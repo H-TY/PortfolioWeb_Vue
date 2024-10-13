@@ -1,0 +1,1 @@
+import{_ as t,r as n,o as r,c as a,a as s,d as c,F as l}from"./index-CdgDv6g2.js";const _={};function d(u,e){const o=n("RouterView");return r(),a(l,null,[e[0]||(e[0]=s("div",{class:"container-fluid p-0"},null,-1)),c(o)],64)}const i=t(_,[["render",d]]);export{i as default};
