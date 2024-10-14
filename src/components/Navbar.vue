@@ -2,7 +2,7 @@
   <div class="container-fluid p-0">
     <ul class="nav nav-tabs justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active" href="#">skill</a>
+        <a class="nav-link active" href="#">About Me</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">前端專題 PPT</a>
