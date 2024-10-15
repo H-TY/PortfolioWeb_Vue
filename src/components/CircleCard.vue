@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-auto p-0 d-flex flex-column flex-wrap align-content-center">
+  <div class="container m-0 w-auto p-0 d-flex flex-column flex-wrap align-content-center justify-content-center">
     <div class="d-flex justify-content-center align-items-center rounded-circle border border-3 border-gray bg-white" style="width: 110px; height: 110px;">
       <!-- <i :class="icon" style="font-size: 2.5rem; color: white;"></i> -->
       <div style="width: 60px; height:60px;">
@@ -25,6 +25,6 @@ const props = defineProps({
 .textCss{
   color: rgb(126, 126, 126);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 </style>

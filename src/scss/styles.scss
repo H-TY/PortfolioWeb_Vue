@@ -24,31 +24,92 @@
 // Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
 
 // Toggle global options
-$enable-gradients: true;
-$enable-shadows: true;
-
-$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+// 範例：
+// $enable-gradients: true;
+// $enable-shadows: true;
+// $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 
 // Include functions first
 @import "bootstrap/scss/functions";
 
 // 要修改的參數都要放在原引進檔案的"前面"
 // Customize some defaults
-$body-color: #333;
-$body-bg: #fff;
-$border-radius: .4rem;
-$success: #7952b3;
+// 範例：
+// $body-color: #333;
+// $body-bg: #fff;
+// $border-radius: .4rem;
+// $success: #7952b3;
 
-// 設定字體
+// ● 在 variables 設定字體
 $font-family-sans-serif: "Roboto", "Noto Sans TC";
+
+// ● 在 variables 的 主色調顏色加入
+$mcPink: #FF89FF;
+$mcBlue: #82E4FF;
+$mcYellow: #FCE158;
+
+$custom-colors: (
+  "mcPink": $mcPink,
+  "mcBlue": $mcBlue,
+  "mcYellow": $mcYellow,
+  "myGray":rgb(105, 110, 115),
+);
+
+// ● 在 variables 的 margin 的數值增加
+$custom-margins: (
+  6: 4rem,
+  7: 5rem,
+  8: 6rem,
+);
+
+// ● 在 variables 的 position 的 % 數值增加
+$custom-position-values: (
+  10: 10%,
+  15: 15%,
+  20: 20%,
+  25: 25%,
+  30: 30%,
+  35: 35%,
+  40: 40%,
+  45: 45%,
+  55: 55%,
+  60: 60%,
+  65: 65%,
+  70: 70%,
+  75: 75%,
+  80: 80%,
+  85: 85%,
+  90: 90%,
+  95: 95%,
+);
+
+
 
 
 // Required
 @import "bootstrap/scss/variables";
+// 需做合併的動作，才能將設定的顏色 $custom-colors 合併進 $theme-colors
+// 因為 $theme-colors 在引進的 @import "bootstrap/scss/variables" 之後才能讀取到值，故合併的 code 要寫在 @import "bootstrap/scss/variables" 之後
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$colors: map-merge($colors, $custom-colors);
+$spacers: map-merge($spacers, $custom-margins);
+$position-values: map-merge($position-values, $custom-position-values);
+
+
 @import "bootstrap/scss/variables-dark";
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
+// ● 在 utilities 的 viewport-height 增加新的值和響應性 responsive: true
+$utilities: map-merge($utilities,
+    ("viewport-height": map-merge(map-get($utilities, "viewport-height"),
+        (values: map-merge(map-get(map-get($utilities, "viewport-height"), "values"),
+            (50: 50vh,
+              30: 30vh)),
+          responsive: true))));
+
+
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
 
