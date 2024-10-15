@@ -1,1 +1,0 @@
-import{_ as t,g as n,o as a,c as r,a as s,d as c,F as l}from"./index-BOvvuIDk.js";const _={};function d(u,e){const o=n("RouterView");return a(),r(l,null,[e[0]||(e[0]=s("div",{class:"container-fluid p-0"},null,-1)),c(o)],64)}const i=t(_,[["render",d]]);export{i as default};
