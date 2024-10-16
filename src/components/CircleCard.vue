@@ -1,8 +1,8 @@
 <template>
-  <div class="container m-0 w-auto p-0 d-flex flex-column flex-wrap align-content-center justify-content-center">
-    <div class="d-flex justify-content-center align-items-center rounded-circle border border-3 border-gray bg-white" style="width: 110px; height: 110px;">
+  <div class="container m-0 p-0 w-auto d-flex flex-column flex-wrap align-content-center justify-content-center">
+    <div class="d-flex justify-content-center align-items-center rounded-circle border border-3 border-gray bg-white" style="width: 100px; height: 100px;">
       <!-- <i :class="icon" style="font-size: 2.5rem; color: white;"></i> -->
-      <div style="width: 60px; height:60px;">
+      <div style="width: 50px; height:50px;">
         <img :src="img" class="object-fit-contain w-100 h-100">
       </div>
     </div>

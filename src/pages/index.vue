@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid p-0">
     <!-- ● 封面 Banner -->
-    <coverBanner></coverBanner>
+    <coverBanner class="mb-sm-2"></coverBanner>
 
     <!-- ● 導覽列 Nav -->
-    <div class="pt-3 bg-white align-content-end position-sticky top-0 z-3">
+    <div class="bg-white position-sticky top-0 z-3">
       <navbar></navbar>
     </div>
 
@@ -15,17 +15,17 @@
           黃色：mcYellow #FCE158 252 225 88
     -->
     <!-- ● about me -->
-    <section class="m-auto mt-5" style="max-width: 1000px;" id="about">
+    <section class="m-auto mt-sm-5" style="max-width: 1000px;" id="about">
       <div class="d-flex justify-content-center mt-3">
         <div class="row m-0">
-          <div class="col-6 p-0">
-            <div class="row m-0 d-flex flex-column">
+          <div class="col-sm-6 p-0">
+            <div class="row m-0 d-flex flex-sm-column">
               <div class="col p-0 position-relative">
                 <div class="d-flex justify-content-center mt-8">
                   <img src="@/assets/img/people.png" class="p-3 object-fit-contain w-100 h-100" style="max-width: 220px;"></img>
                 </div>
                 <div class="position-absolute d-flex justify-content-center top-0 start-10 h-auto" style="min-width: 180px;">
-                  <h5 class="position-absolute translate-middle-y text-myGray" style="top: 65px;">About Me</h5>
+                  <h5 class="position-absolute translate-middle-y text-white textShadow" style="top: 65px;">About Me</h5>
                   <i class="bi bi-chat-right-fill text-mcBlue w-auto z-n1" style="font-size: 7rem;"></i>
                 </div>
               </div>
@@ -41,8 +41,8 @@
               </div>
             </div>
           </div>
-          <div class="d-flex flex-wrap justify-content-around col-6  p-0">
-            <circleCard class="px-3" v-for="(el, index) in skills" :key="index" :title="el.title" :icon="el.icon" :img="el.img"></circleCard>
+          <div class="col-sm-6 mt-4 mt-sm-0 p-0 d-flex flex-wrap justify-content-evenly">
+            <circleCard class="px-sm-3 px-2" v-for="(el, index) in skills" :key="index" :title="el.title" :icon="el.icon" :img="el.img"></circleCard>
           </div>
         </div>
       </div>
@@ -51,22 +51,48 @@
     <!-- ● 前端專題 PPT -->
     <section class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25" id="ppt">
       <div class="m-auto" style="max-width: 1000px; height:70vh;">
+        <!-- Title -->
         <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 180px;">
           <h4 class="z-1">前端專題｜PPT</h4>
           <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
         </div>
-        <iframe class="mt-4 ratio ratio-16x9" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://reurl.cc/nvjDrX" allowfullscreen></iframe>
+        <iframe class="my-4 ratio ratio-16x9" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://reurl.cc/nvjDrX" allowfullscreen></iframe>
       </div>
     </section>
 
     <!-- ● 專題網站展示 -->
-    <section class="m-auto mt-5 py-5" id="frontWeb">
-      <div class="m-auto" style="max-width: 1000px; height:100vh;">
-        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 180px;">
-          <h4 class="z-1">前端專題｜Web</h4>
+    <section class="m-auto mt-5 py-3" id="frontWeb">
+      <div class="m-auto" style="max-width: 1000px;">
+        <!-- Title -->
+        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
+          <h4 class="z-1">前端專題｜Web 展示</h4>
           <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
         </div>
-        <iframe class="mt-4" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://h-ty.github.io/Dost_front_Veutify/#/" allowfullscreen></iframe>
+        <!-- <iframe class="mt-4" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://h-ty.github.io/Dost_front_Veutify/#/" allowfullscreen></iframe> -->
+        <div class="position-relative">
+          <img class="w-100 my-4 object-fit-cover" src="@/assets/img/Dost_webPresentation_Banner.jpg">
+          <div class="w-30 d-flex flex-wrap justify-content-center position-absolute top-50 end-0 translate-middle-y me-5">
+            <a class="d-flex flex-wrap justify-content-center" href="https://h-ty.github.io/Dost_front_Veutify/#/" target="_blank">
+              <img class="w-sm-100 w-75 mt-6" src="@/assets/logo_img/Dost_Logo_png.png">
+            </a>
+            <p class="m-0 mt-sm-4 mt-2 fs-sm-9 fs-10 text-myGray"><i class="bi bi-info-circle-fill me-md-2 me-1 text-myGray text-opacity-50"></i>點擊圖片可前往專題網站</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ● jQ 小遊戲｜紓壓時鐘 -->
+    <section class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25" id="other">
+      <div class="m-auto" style="max-width: 1000px;">
+        <!-- Title -->
+        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
+        <h4 class="z-1">jQ 小遊戲｜紓壓時鐘</h4>
+        <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+        </div>
+        <!-- items -->
+        <div class="d-flex flex-wrap justify-content-around">
+          <itemCard v-for="(el, index) in items" :key="index" :title="el.title" :img="el.img" :to="el.to"></itemCard>
+        </div>
       </div>
     </section>
 
@@ -81,6 +107,8 @@ import { ref, computed} from 'vue'
 import coverBanner from '@/components/CoverBanner'
 import navbar from '@/components/Navbar'
 import circleCard from '@/components/CircleCard'
+import itemCard from '@/components/itemCard'
+
 
 
 definePage({
@@ -117,6 +145,11 @@ const skills = ref([
 ])
 
 
+const items = ref([
+  {title: 'jQ Game｜驅鬼小遊戲', img: new URL('@/assets/logo_img/HTML_logo.png', import.meta.url).href},
+  {title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to:'https://h-ty.github.io/20240416_JS_HW_clock/'},
+])
+
 
 
 
@@ -127,6 +160,11 @@ const skills = ref([
 /* about me 文字顏色 */
 .list-group-item{
   color: rgb(70, 76, 85);
+}
+
+/* about me 對話框字體效果 */
+.textShadow {
+  text-shadow: 3px 2px 2px rgba(0 , 0, 0, 0.5);
 }
 
 </style>

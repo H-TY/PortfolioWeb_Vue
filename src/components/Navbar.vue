@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid p-0">
-    <nav class="navbar navbar-expand-sm">
+    <nav class="navbar navbar-expand-sm d-flex justify-content-end me-5 me-sm-0">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,10 +16,10 @@
             <a class="nav-link" href="#frontWeb" @click.prevent="scrollToId('#frontWeb')" data-bs-toggle="tab">專題網站展示</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" @click.prevent="scrollToId('#')" data-bs-toggle="tab">jQ 小遊戲</a>
+            <a class="nav-link" href="#other" @click.prevent="scrollToId('#other')" data-bs-toggle="tab">jQ 小遊戲</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" @click.prevent="scrollToId('#')" data-bs-toggle="tab">紓壓時鐘</a>
+            <a class="nav-link" href="#other" @click.prevent="scrollToId('#other')" data-bs-toggle="tab">紓壓時鐘</a>
           </li>
         </ul>
       </div>

@@ -29,10 +29,11 @@
 // $enable-shadows: true;
 // $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 
+
 // Include functions first
 @import "bootstrap/scss/functions";
 
-// 要修改的參數都要放在原引進檔案的"前面"
+// 要"修改"的參數都要放在原引進檔案的"前面"
 // Customize some defaults
 // 範例：
 // $body-color: #333;
@@ -42,6 +43,26 @@
 
 // ● 在 variables 設定字體
 $font-family-sans-serif: "Roboto", "Noto Sans TC";
+
+
+// ● 在 variables 的 font-sizes 增加值
+$custom-font-sizes: (
+  7: 0.7rem,
+  8: 0.8rem,
+  9: 0.9rem,
+  10: 0.5rem,
+  11: 0.25rem,
+);
+
+// ● 在 variables 的 display-font-sizes 增加值
+// class 寫法 display-9
+$custom-display-font-sizes: (
+  7: 2rem,
+  8: 1.5rem,
+  9: 0.8rem,
+  10: 0.5rem,
+  11: 0.25rem,
+);
 
 // ● 在 variables 的 主色調顏色加入
 $mcPink: #FF89FF;
@@ -91,6 +112,8 @@ $custom-position-values: (
 // 需做合併的動作，才能將設定的顏色 $custom-colors 合併進 $theme-colors
 // 因為 $theme-colors 在引進的 @import "bootstrap/scss/variables" 之後才能讀取到值，故合併的 code 要寫在 @import "bootstrap/scss/variables" 之後
 // Merge the maps
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+$display-font-sizes: map-merge($display-font-sizes, $custom-display-font-sizes);
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $colors: map-merge($colors, $custom-colors);
 $spacers: map-merge($spacers, $custom-margins);
@@ -108,6 +131,31 @@ $utilities: map-merge($utilities,
             (50: 50vh,
               30: 30vh)),
           responsive: true))));
+
+// ● 在 utilities 的 width 增加新的值和響應性 responsive: true
+$utilities: map-merge($utilities,
+    ("width": map-merge(map-get($utilities, "width"),
+        (values: map-merge(map-get(map-get($utilities, "width"), "values"),
+            (10:10%,
+              15:15%,
+              20:20%,
+              30: 30%,
+              35: 35%,
+              40: 40%,
+              45: 45%,
+              55: 55%,
+              60: 60%,
+              65: 65%,
+              70: 70%,
+              80: 80%,
+              85: 85%,
+              90: 90%,
+              95: 95%, )),
+          responsive: true))));
+
+// ● 在 utilities 的 font-size 增加新的值和響應性 responsive: true
+$utilities: map-merge($utilities, ("font-size":map-merge(map-get($utilities, "font-size"),
+        (responsive: true))));
 
 
 @import "bootstrap/scss/root";
