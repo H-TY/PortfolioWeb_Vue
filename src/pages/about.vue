@@ -9,8 +9,8 @@ import { definePage } from 'vue-router/auto'
 definePage({
   meta: {
     title: 'about | 789789',
-    login: true,
-    admin: true
+    login: false,
+    admin: false
   }
 })
 </script>

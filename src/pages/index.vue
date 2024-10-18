@@ -15,14 +15,15 @@
           黃色：mcYellow #FCE158 252 225 88
     -->
     <!-- ● about me -->
-    <section class="m-auto mt-sm-5" style="max-width: 1000px;" id="about">
+    <section id="about" class="m-auto mt-sm-5" style="max-width: 1000px;">
       <div class="d-flex justify-content-center mt-3">
         <div class="row m-0">
           <div class="col-sm-6 p-0">
             <div class="row m-0 d-flex flex-sm-column">
               <div class="col p-0 position-relative">
-                <div class="d-flex justify-content-center mt-8">
+                <div class="d-flex flex-column justify-content-center align-items-center mt-8">
                   <img src="@/assets/img/people.png" class="p-3 object-fit-contain w-100 h-100" style="max-width: 220px;"></img>
+                  <p class="fs-8 text-myGray">※ 圖片來源 <a href="www.freepik.com" class=" text-decoration-none">Designed by Freepik</a></p>
                 </div>
                 <div class="position-absolute d-flex justify-content-center top-0 start-10 h-auto" style="min-width: 180px;">
                   <h5 class="position-absolute translate-middle-y text-white textShadow" style="top: 65px;">About Me</h5>
@@ -49,7 +50,7 @@
     </section>
 
     <!-- ● 前端專題 PPT -->
-    <section class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25" id="ppt">
+    <section id="ppt" class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25">
       <div class="m-auto" style="max-width: 1000px; height:70vh;">
         <!-- Title -->
         <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 180px;">
@@ -61,7 +62,7 @@
     </section>
 
     <!-- ● 專題網站展示 -->
-    <section class="m-auto mt-5 py-3" id="frontWeb">
+    <section id="frontWeb" class="m-auto mt-5 py-3">
       <div class="m-auto" style="max-width: 1000px;">
         <!-- Title -->
         <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
@@ -82,12 +83,12 @@
     </section>
 
     <!-- ● jQ 小遊戲｜紓壓時鐘 -->
-    <section class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25" id="other">
-      <div class="m-auto" style="max-width: 1000px;">
+    <section id="other" class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25">
+      <div class="m-auto h-sm-50 h-100" style="max-width: 1000px;">
         <!-- Title -->
         <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
-        <h4 class="z-1">jQ 小遊戲｜紓壓時鐘</h4>
-        <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+          <h4 class="z-1">jQ 小遊戲 & 紓壓時鐘</h4>
+          <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
         </div>
         <!-- items -->
         <div class="d-flex flex-wrap justify-content-around">
@@ -103,11 +104,17 @@
 
 <script setup>
 import { definePage } from 'vue-router/auto'
-import { ref, computed} from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import coverBanner from '@/components/CoverBanner'
 import navbar from '@/components/Navbar'
 import circleCard from '@/components/CircleCard'
 import itemCard from '@/components/itemCard'
+
+
+// 引用 GSAP_core 和 Plugins
+import { gsap, Flip, ScrollTrigger, Observer, ScrollToPlugin, Draggable, MotionPathPlugin, EaselPlugin, PixiPlugin, TextPlugin } from 'gsap/all'
+// Plugins 需要再做註冊 gsap.registerPlugin 動作才能使用
+gsap.registerPlugin(Flip, ScrollTrigger, Observer, ScrollToPlugin, Draggable, MotionPathPlugin, EaselPlugin, PixiPlugin, TextPlugin)
 
 
 
@@ -133,22 +140,86 @@ definePage({
 // ])
 
 const skills = ref([
-  {title: 'HTML', img: new URL('@/assets/logo_img/HTML_logo.png', import.meta.url).href},
-  {title: 'CSS', img: new URL('@/assets/logo_img/CSS_logo.png', import.meta.url).href},
-  {title: 'JavaScript', img:new URL('@/assets/logo_img/JS_logo.png', import.meta.url).href},
-  {title: 'Bootstrap', img:new URL('@/assets/logo_img/BS_logo.png', import.meta.url).href},
-  {title: 'Sass', img:new URL('@/assets/logo_img/Sass_logo.png', import.meta.url).href},
-  {title: 'jQuery', img:new URL('@/assets/logo_img/jQuery_logo.png', import.meta.url).href},
-  {title: 'Vue.js', img:new URL('@/assets/logo_img/Vue_logo.png', import.meta.url).href},
-  {title: 'Node.js', img:new URL('@/assets/logo_img/Nodejs_logo_1.png', import.meta.url).href},
-  {title: 'MongoDB', img:new URL('@/assets/logo_img/MongoDB_logo.png', import.meta.url).href},
+  { title: 'HTML', img: new URL('@/assets/logo_img/HTML_logo.png', import.meta.url).href },
+  { title: 'CSS', img: new URL('@/assets/logo_img/CSS_logo.png', import.meta.url).href },
+  { title: 'JavaScript', img: new URL('@/assets/logo_img/JS_logo.png', import.meta.url).href },
+  { title: 'Bootstrap', img: new URL('@/assets/logo_img/BS_logo.png', import.meta.url).href },
+  { title: 'Sass', img: new URL('@/assets/logo_img/Sass_logo.png', import.meta.url).href },
+  { title: 'jQuery', img: new URL('@/assets/logo_img/jQuery_logo.png', import.meta.url).href },
+  { title: 'Vue.js', img: new URL('@/assets/logo_img/Vue_logo.png', import.meta.url).href },
+  { title: 'Node.js', img: new URL('@/assets/logo_img/Nodejs_logo_1.png', import.meta.url).href },
+  { title: 'MongoDB', img: new URL('@/assets/logo_img/MongoDB_logo.png', import.meta.url).href },
 ])
 
 
 const items = ref([
-  {title: 'jQ Game｜驅鬼小遊戲', img: new URL('@/assets/logo_img/HTML_logo.png', import.meta.url).href},
-  {title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to:'https://h-ty.github.io/20240416_JS_HW_clock/'},
+  { title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
+  { title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
 ])
+
+
+// 滾動時觸發 navbar 所需要設定的數值設為陣列
+const scrollNavbar = [
+  {
+    tab: "#aboutTab",
+    trigger: "#about",
+  },
+
+  {
+    tab: "#pptTab",
+    trigger: "#ppt",
+  },
+
+  {
+    tab: "#frontWebTab",
+    trigger: "#frontWeb",
+  },
+
+  {
+    tab: "#otherTab",
+    trigger: "#other",
+  },
+
+]
+
+
+// 使用 onMounted 確定 DOM 已渲染完成，Gsap 才能抓到物件
+onMounted(() => {
+
+  // 找出物件尺寸數值
+  // const element = document.querySelector("#about");
+  // const rect = element .getBoundingClientRect();
+  // console.log('#about', rect )
+
+
+  // 由滾動滑鼠觸發 navtab 的相對應位置
+  // 將上述的陣列 scrollNavbar 做迴圈並帶入 key 值執行函數
+  const setGsap = () => {
+    scrollNavbar.forEach(({ tab, trigger, start, end }) => {
+      gsap.to(tab, {
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top 150px",
+          end: "bottom 150px",
+          onToggle: (self) => {
+            if (self.isActive) {
+              document.querySelector('.active')?.classList.remove('active')
+              document.querySelector(tab).classList.add('active')
+            } else {
+              document.querySelector(tab).classList.remove('active')
+            }
+          },
+          // markers: true,
+        }
+      })
+    })
+  }
+  // 延遲觸發 gsap 動畫，避免位置設定成元素初始化的位置，導致錯位
+  setTimeout(() => {
+    setGsap()
+  }, 500);
+})
+
 
 
 
@@ -158,13 +229,12 @@ const items = ref([
 
 <style scoped>
 /* about me 文字顏色 */
-.list-group-item{
+.list-group-item {
   color: rgb(70, 76, 85);
 }
 
 /* about me 對話框字體效果 */
 .textShadow {
-  text-shadow: 3px 2px 2px rgba(0 , 0, 0, 0.5);
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
 }
-
 </style>
