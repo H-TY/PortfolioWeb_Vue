@@ -1,1 +1,0 @@
-import{_ as t,g as n,o as a,c as r,a as s,b as c,F as l}from"./index-CL322Z2L.js";const _={};function u(d,e){const o=n("RouterView");return a(),r(l,null,[e[0]||(e[0]=s("div",{class:"container-fluid p-0"},null,-1)),c(o)],64)}const i=t(_,[["render",u]]);export{i as default};
