@@ -86,13 +86,13 @@
     <section id="other" class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25">
       <div class="m-auto h-sm-50 h-100" style="max-width: 1000px;">
         <!-- Title -->
-        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
-          <h4 class="z-1">jQ 小遊戲 & 紓壓時鐘</h4>
+        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 90px;">
+          <h4 class="z-1">Other</h4>
           <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
         </div>
         <!-- items -->
         <div class="d-flex flex-wrap justify-content-around">
-          <itemCard v-for="(el, index) in items" :key="index" :title="el.title" :img="el.img" :to="el.to"></itemCard>
+          <itemCard v-for="(el, index) in items" :key="index" :id="el.id" :title="el.title" :img="el.img" :to="el.to"></itemCard>
         </div>
       </div>
     </section>
@@ -127,17 +127,6 @@ definePage({
 })
 
 
-// const skills = ref([
-//   {title: 'HTML', icon:' bi-filetype-html'},
-//   {title: 'CSS', icon:'bi-filetype-css'},
-//   {title: 'JavaScript', icon:'bi-filetype-js'},
-//   {title: 'Bootstrap', icon:' bi-bootstrap-fill'},
-//   {title: 'Sass', icon:' bi-filetype-sass'},
-//   {title: 'jQuery', icon:' bi-filetype-sass'},
-//   {title: 'Vue.js', icon:' bi-filetype-sass'},
-//   {title: 'Node.js', icon:' bi-filetype-sass'},
-//   {title: 'MongoDB', icon:' bi-filetype-sass'},
-// ])
 
 const skills = ref([
   { title: 'HTML', img: new URL('@/assets/logo_img/HTML_logo.png', import.meta.url).href },
@@ -153,8 +142,9 @@ const skills = ref([
 
 
 const items = ref([
-  { title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
-  { title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
+  { id: 'jQGame',title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
+  { id: 'clock',title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
+  { id: 'LineBot',title: 'Line Bot｜搜尋食物', img: new URL('@/assets/gif/Line-Bot_SF_png-edit-1.gif', import.meta.url).href, to: 'https://lin.ee/B6TaGfb' },
 ])
 
 
@@ -176,10 +166,19 @@ const scrollNavbar = [
   },
 
   {
-    tab: "#otherTab",
-    trigger: "#other",
+    tab: "#jQGameTab",
+    trigger: "#jQGame",
   },
 
+  {
+    tab: "#clockTab",
+    trigger: "#clock",
+  },
+
+  {
+    tab: "#LineBotTab",
+    trigger: "#LineBot",
+  },
 ]
 
 
