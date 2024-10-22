@@ -65,13 +65,15 @@
     <section id="frontWeb" class="m-auto mt-5 py-3">
       <div class="m-auto" style="max-width: 1000px;">
         <!-- Title -->
-        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
-          <h4 class="z-1">前端專題｜Web 展示</h4>
-          <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+        <div class="d-flex">
+          <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
+            <h4 class="z-1">前端專題｜Web 展示</h4>
+            <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+          </div>
+          <p class="m-0 ms-3 text-myGray fs-9 d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>若進入網頁無內容，請靜待 30 秒後，再重新載入頁面。</p>
         </div>
-        <!-- <iframe class="mt-4" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://h-ty.github.io/Dost_front_Veutify/#/" allowfullscreen></iframe> -->
-        <div class="position-relative">
-          <img class="w-100 my-4 object-fit-cover" src="@/assets/img/Dost_webPresentation_Banner.jpg">
+        <div class="position-relative my-4 ">
+          <img class="w-100 object-fit-cover" src="@/assets/img/Dost_webPresentation_Banner.jpg">
           <div class="w-30 d-flex flex-wrap justify-content-center position-absolute top-50 end-0 translate-middle-y me-5">
             <a class="d-flex flex-wrap justify-content-center" href="https://h-ty.github.io/Dost_front_Veutify/#/" target="_blank">
               <img class="w-sm-100 w-75 mt-6" src="@/assets/logo_img/Dost_Logo_png.png">
@@ -142,9 +144,9 @@ const skills = ref([
 
 
 const items = ref([
-  { id: 'jQGame',title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
-  { id: 'clock',title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
-  { id: 'LineBot',title: 'Line Bot｜搜尋食物', img: new URL('@/assets/gif/Line-Bot_SF_png-edit-1.gif', import.meta.url).href, to: 'https://lin.ee/B6TaGfb' },
+  { id: 'jQGame', title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
+  { id: 'clock', title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
+  { id: 'LineBot', title: 'Line Bot｜搜尋食物', img: new URL('@/assets/gif/Line-Bot_SF_png-edit-1.gif', import.meta.url).href, to: 'https://lin.ee/B6TaGfb' },
 ])
 
 
