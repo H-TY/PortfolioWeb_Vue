@@ -23,7 +23,7 @@
               <div class="col p-0 position-relative">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-8">
                   <img src="@/assets/img/people.png" class="p-3 object-fit-contain w-100 h-100" style="max-width: 220px;"></img>
-                  <p class="fs-8 text-myGray">※ 圖片來源 <a href="www.freepik.com" class=" text-decoration-none">Designed by Freepik</a></p>
+                  <p class="fs-8 text-myGray">※ 圖片來源 <a href="https://www.freepik.com/" target="_blank" class="text-decoration-none">Designed by Freepik</a></p>
                 </div>
                 <div class="position-absolute d-flex justify-content-center top-0 start-10 h-auto" style="min-width: 180px;">
                   <h5 class="position-absolute translate-middle-y text-white textShadow" style="top: 65px;">About Me</h5>
@@ -127,7 +127,6 @@ definePage({
     admin: false
   }
 })
-
 
 
 const skills = ref([
