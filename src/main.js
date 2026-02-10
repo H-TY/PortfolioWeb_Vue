@@ -7,8 +7,8 @@ import router from './router'
 import '@/scss/styles.scss'
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
-// Import only the Bootstrap components we need
-import { Popover } from 'bootstrap'
+// 根據需要 Import only the Bootstrap components
+// import { Popover } from 'bootstrap'
 
 // 引用 bootstrap icon
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -32,7 +32,7 @@ app.mount('#app')
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 // Create an example popover
-document.querySelectorAll('[data-bs-toggle="popover"]')
-  .forEach(popover => {
-    new Popover(popover)
-  })
+// document.querySelectorAll('[data-bs-toggle="popover"]')
+//   .forEach(popover => {
+//     new Popover(popover)
+//   })

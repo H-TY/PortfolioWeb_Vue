@@ -9,7 +9,6 @@
 // `$body-color` or write more CSS that override's Bootstrap's CSS like so:
 // `body { color: red; }`.
 
-
 //
 // Bring in Bootstrap
 //
@@ -29,9 +28,8 @@
 // $enable-shadows: true;
 // $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 
-
 // Include functions first
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 // 要"修改"的參數都要放在原引進檔案的"前面"
 // Customize some defaults
@@ -42,73 +40,71 @@
 // $success: #7952b3;
 
 // ● 在 variables 設定字體
-$font-family-sans-serif: "Roboto", "Noto Sans TC";
-
+$font-family-sans-serif: 'Roboto', 'Noto Sans TC';
 
 // ● 在 variables 的 font-sizes 增加值
 $custom-font-sizes: (
-  7: 0.7rem,
-  8: 0.8rem,
-  9: 0.9rem,
-  10: 0.5rem,
-  11: 0.25rem,
+	7: 0.7rem,
+	8: 0.8rem,
+	9: 0.9rem,
+	10: 0.5rem,
+	11: 0.25rem
 );
 
 // ● 在 variables 的 display-font-sizes 增加值
 // class 寫法 display-9
 $custom-display-font-sizes: (
-  7: 2rem,
-  8: 1.5rem,
-  9: 0.8rem,
-  10: 0.5rem,
-  11: 0.25rem,
+	7: 2rem,
+	8: 1.5rem,
+	9: 0.8rem,
+	10: 0.5rem,
+	11: 0.25rem
 );
 
 // ● 在 variables 的 主色調顏色加入
-$mcPink: #FF89FF;
-$mcBlue: #82E4FF;
-$mcYellow: #FCE158;
+$mcPink: #ff89ff;
+$mcBlue: #82e4ff;
+$mcYellow: #fce158;
+$textColor1: rgb(70, 70, 70);
+$textColor2: rgb(97, 97, 97);
 
 $custom-colors: (
-  "mcPink": $mcPink,
-  "mcBlue": $mcBlue,
-  "mcYellow": $mcYellow,
-  "myGray":rgb(105, 110, 115),
+	'mcPink': $mcPink,
+	'mcBlue': $mcBlue,
+	'mcYellow': $mcYellow,
+	'myGray': rgb(105, 110, 115)
 );
 
 // ● 在 variables 的 margin 的數值增加
 $custom-margins: (
-  6: 4rem,
-  7: 5rem,
-  8: 6rem,
+	6: 4rem,
+	7: 5rem,
+	8: 6rem
 );
 
 // ● 在 variables 的 position 的 % 數值增加
 $custom-position-values: (
-  10: 10%,
-  15: 15%,
-  20: 20%,
-  25: 25%,
-  30: 30%,
-  35: 35%,
-  40: 40%,
-  45: 45%,
-  55: 55%,
-  60: 60%,
-  65: 65%,
-  70: 70%,
-  75: 75%,
-  80: 80%,
-  85: 85%,
-  90: 90%,
-  95: 95%,
+	10: 10%,
+	15: 15%,
+	20: 20%,
+	25: 25%,
+	30: 30%,
+	35: 35%,
+	40: 40%,
+	45: 45%,
+	55: 55%,
+	60: 60%,
+	65: 65%,
+	70: 70%,
+	75: 75%,
+	80: 80%,
+	85: 85%,
+	90: 90%,
+	95: 95%
 );
 
-
-
-
 // Required
-@import "bootstrap/scss/variables";
+@import 'bootstrap/scss/variables';
 // 需做合併的動作，才能將設定的顏色 $custom-colors 合併進 $theme-colors
 // 因為 $theme-colors 在引進的 @import "bootstrap/scss/variables" 之後才能讀取到值，故合併的 code 要寫在 @import "bootstrap/scss/variables" 之後
 // Merge the maps
@@ -119,80 +115,511 @@ $colors: map-merge($colors, $custom-colors);
 $spacers: map-merge($spacers, $custom-margins);
 $position-values: map-merge($position-values, $custom-position-values);
 
-
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
 // ● 在 utilities 的 viewport-height 增加新的值和響應性 responsive: true
-$utilities: map-merge($utilities,
-    ("viewport-height": map-merge(map-get($utilities, "viewport-height"),
-        (values: map-merge(map-get(map-get($utilities, "viewport-height"), "values"),
-            (50: 50vh,
-              30: 30vh)),
-          responsive: true))));
+$utilities: map-merge(
+	$utilities,
+	(
+		'viewport-height': map-merge(
+				map-get($utilities, 'viewport-height'),
+				(
+					values: map-merge(
+							map-get(map-get($utilities, 'viewport-height'), 'values'),
+							(
+								50: 50vh,
+								30: 30vh
+							)
+						),
+					responsive: true
+				)
+			)
+	)
+);
 
 // ● 在 utilities 的 width 增加新的值和響應性 responsive: true
-$utilities: map-merge($utilities,
-    ("width": map-merge(map-get($utilities, "width"),
-        (values: map-merge(map-get(map-get($utilities, "width"), "values"),
-            (10:10%,
-              15:15%,
-              20:20%,
-              30: 30%,
-              35: 35%,
-              40: 40%,
-              45: 45%,
-              55: 55%,
-              60: 60%,
-              65: 65%,
-              70: 70%,
-              80: 80%,
-              85: 85%,
-              90: 90%,
-              95: 95%, )),
-          responsive: true))));
+$utilities: map-merge(
+	$utilities,
+	(
+		'width': map-merge(
+				map-get($utilities, 'width'),
+				(
+					values: map-merge(
+							map-get(map-get($utilities, 'width'), 'values'),
+							(
+								10: 10%,
+								15: 15%,
+								20: 20%,
+								30: 30%,
+								35: 35%,
+								40: 40%,
+								45: 45%,
+								55: 55%,
+								60: 60%,
+								65: 65%,
+								70: 70%,
+								80: 80%,
+								85: 85%,
+								90: 90%,
+								95: 95%,
+								fit-content: fit-content
+							)
+						),
+					responsive: true
+				)
+			)
+	)
+);
+
+// ● 在 utilities 的 height 增加新的值和響應性 responsive: true
+$utilities: map-merge(
+	$utilities,
+	(
+		'height': map-merge(
+				map-get($utilities, 'height'),
+				(
+					values: map-merge(
+							map-get(map-get($utilities, 'height'), 'values'),
+							(
+								fit-content: fit-content
+							)
+						),
+					responsive: true
+				)
+			)
+	)
+);
 
 // ● 在 utilities 的 font-size 增加新的值和響應性 responsive: true
-$utilities: map-merge($utilities, ("font-size":map-merge(map-get($utilities, "font-size"),
-        (responsive: true))));
+$utilities: map-merge(
+	$utilities,
+	(
+		'font-size': map-merge(
+				map-get($utilities, 'font-size'),
+				(
+					responsive: true
+				)
+			)
+	)
+);
 
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
 
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/reboot";
-
-@import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
-@import "bootstrap/scss/containers";
-@import "bootstrap/scss/grid";
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
 // @import "bootstrap/scss/tables";
-// @import "bootstrap/scss/forms";
-@import "bootstrap/scss/buttons";
-@import "bootstrap/scss/transitions";
-@import "bootstrap/scss/dropdown";
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
 // @import "bootstrap/scss/button-group";
-@import "bootstrap/scss/nav";
-@import "bootstrap/scss/navbar"; // Requires nav
-@import "bootstrap/scss/card";
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar'; // Requires nav
+@import 'bootstrap/scss/card';
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/accordion";
 // @import "bootstrap/scss/pagination";
 // @import "bootstrap/scss/badge";
 // @import "bootstrap/scss/alert";
 // @import "bootstrap/scss/progress";
-@import "bootstrap/scss/list-group";
-@import "bootstrap/scss/close";
+@import 'bootstrap/scss/list-group';
+@import 'bootstrap/scss/close';
 // @import "bootstrap/scss/toasts";
-@import "bootstrap/scss/modal"; // Requires transitions
+@import 'bootstrap/scss/modal'; // Requires transitions
 // @import "bootstrap/scss/tooltip";
-@import "bootstrap/scss/popover";
+@import 'bootstrap/scss/popover';
 // @import "bootstrap/scss/carousel";
 // @import "bootstrap/scss/spinners";
-@import "bootstrap/scss/offcanvas"; // Requires transitions
+@import 'bootstrap/scss/offcanvas'; // Requires transitions
 // @import "bootstrap/scss/placeholders";
 
 // Helpers
-// @import "bootstrap/scss/helpers";
+@import 'bootstrap/scss/helpers';
 
 // Utilities
-@import "bootstrap/scss/utilities/api";
+@import 'bootstrap/scss/utilities/api';
+
+// ============================================
+// ● 以下為客製的 CSS 樣式
+
+// ==== ★☆★ 全域樣式 ★☆★ ====
+$textSize1: calc(1rem + 0.2vw);
+$textSize2: calc(1rem + 0.15vw);
+$textSize3: calc(1rem + 0.1vw);
+
+body {
+	color: $textColor1;
+}
+
+section {
+	padding: 6rem 0;
+	margin: auto;
+	position: relative;
+	scroll-margin-top: 44px;
+
+	&:last-of-type {
+		padding-bottom: 8rem;
+	}
+
+	@media (max-width: 425px) {
+		&:nth-of-type(1) {
+			padding-top: 0;
+		}
+
+		&:last-of-type {
+			padding-bottom: 6rem;
+		}
+	}
+
+	// &:nth-child(odd) {
+	// 	&::before {
+	// 		content: '';
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		background: $mcYellow;
+	// 		opacity: 0.15;
+	// 		position: absolute;
+	// 		top: 0;
+	// 		left: 0;
+	// 		z-index: -1;
+	// 	}
+	// }
+
+	&:nth-child(2n) {
+		&::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: $mcYellow;
+			opacity: 0.15;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+	}
+
+	.content {
+		max-width: 1000px;
+		margin: auto;
+	}
+}
+
+// 區塊標題
+.section-title {
+	width: fit-content;
+	height: fit-content;
+	color: #333;
+	white-space: nowrap;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+	isolation: isolate;
+
+	&::before {
+		content: '';
+		width: 100%;
+		height: 12px;
+		background: $mcBlue;
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		z-index: -1;
+	}
+
+	h4 {
+		padding: 0 1.2rem;
+		margin: 0;
+	}
+}
+
+// ==== ★☆★ componets 元件樣式 ★☆★ ====
+.circleCard {
+	.textCss {
+		color: rgb(126, 126, 126);
+		font-size: $textSize2;
+		font-weight: 600;
+	}
+}
+
+.item-card {
+	width: 100%;
+	align-self: stretch;
+	text-align: center;
+	// padding: 1rem;
+
+	a {
+		// 宣告變數
+		--spacing: 1.5rem;
+
+		// === 樣式設定 ===
+		width: 100%;
+		height: 100%;
+		background: white;
+		overflow: hidden;
+		border-radius: 10px;
+		padding: var(--spacing);
+		display: inline-flex;
+		gap: var(--spacing);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-shadow: rgba(darken($mcYellow, 40%), 0.15) 0px 4px 12px;
+	}
+
+	.img-box {
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	p {
+		color: $textColor2;
+		font-size: $textSize2;
+		font-weight: 600;
+		text-align: center;
+		margin: 0;
+	}
+}
+
+// ==== ★☆★ 各區塊樣式設定 ★☆★ ====
+// # navbar 導覽列
+#navbar {
+	background: white;
+	transition: 0.3s ease-out;
+
+	.navbar {
+		padding: 0;
+	}
+
+	.nav-tabs {
+		width: 100%;
+		--bs-nav-tabs-border-color: #{$mcBlue};
+		--bs-nav-tabs-link-active-border-color: #{$mcBlue} #{$mcBlue} white;
+	}
+
+	.nav-item {
+		&:nth-child(2n) {
+			.nav-link {
+				&.active,
+				&.show {
+					background: #fffbe6;
+				}
+			}
+		}
+	}
+
+	.nav-link {
+		font-size: $textSize3;
+		font-weight: 400;
+		color: $textColor1;
+		border: none;
+		padding: 1rem;
+
+		&.active,
+		&.show {
+			font-weight: 600;
+			color: darken($mcBlue, 37%);
+			border: 1px solid $mcBlue;
+			border-bottom: 0px;
+		}
+	}
+
+	/* 導覽列的漢堡按鈕 */
+	.navbar-toggler:focus {
+		box-shadow: 0px 0px 5px rgba(3, 53, 82, 0.2);
+	}
+
+	/* 當滾動 navbar 貼近頂部時，添加樣式 */
+	&.top-touch-top {
+		padding-top: 30px;
+
+		.nav-link {
+			padding: 0.6rem 1rem;
+		}
+	}
+
+	@media (max-width: 425px) {
+		.navbar-toggler {
+			line-height: 0.9;
+			border: none;
+			padding: 28px 0;
+			padding-bottom: 1.5rem;
+
+			&:focus {
+				box-shadow: unset;
+			}
+
+			.burger-icon {
+				display: flex;
+				gap: 2px;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				hr {
+					width: 48px;
+					border-width: 2px;
+					border-color: $textColor2;
+					opacity: 0.6;
+					margin: 0;
+					margin-top: 4px;
+					transition: 0.3s ease-out;
+				}
+
+				i {
+					color: rgba($textColor2, 0.7);
+					animation: topAndDown 1s ease-in-out infinite;
+				}
+
+				&.burger-icon-open {
+					width: 44px;
+					height: 44px;
+					border: 1px solid rgba($textColor2, 0.25);
+					border-radius: 10px;
+					position: relative;
+
+					hr {
+						width: 24px;
+						margin: 0;
+						border-width: 3px;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%) rotate(45deg);
+
+						&:nth-child(2) {
+							transform: translate(-50%, -50%) rotate(-45deg);
+						}
+					}
+
+					i {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.navbar-collapse {
+			.nav-tabs {
+				row-gap: 10px;
+				padding-bottom: 20px;
+			}
+
+			.nav-item {
+				&:nth-child(2n) {
+					.nav-link {
+						&.active,
+						&.show {
+							background: white;
+						}
+					}
+				}
+			}
+
+			.nav-link {
+				padding: 0.5rem 1rem;
+
+				&.active,
+				&.show {
+					border-bottom: 1px solid $mcBlue;
+					border-radius: 50px;
+				}
+			}
+		}
+
+		&.top-touch-top {
+			padding-top: unset;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 20px;
+
+			// &::before {
+			// 	content: '';
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	background: white;
+			// 	clip-path: polygon(0 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// }
+		}
+	}
+}
+
+// # about 關於我
+#about {
+	/* about me 文字陰影 */
+	.textShadow {
+		text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.list-group-item {
+		background-color: unset;
+	}
+}
+
+// # practice 實務專案
+#practice {
+	.item-card {
+		.img-box {
+			height: 250px;
+
+			img {
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+// # 期末專案 PPT
+#ppt {
+	iframe {
+		width: 100%;
+		height: 70vh;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+	}
+}
+
+// # other 互動小作品
+#other {
+	.item-card {
+		a {
+			// 宣告變數
+			--spacing: 0rem;
+			border: 1px solid rgba($textColor2, 0.15);
+		}
+
+		.img-box {
+			height: 280px;
+		}
+
+		p {
+			padding: 1.5rem 0;
+		}
+	}
+}
+
+// ==== ★☆★ 動畫設定 ★☆★ ====
+@keyframes topAndDown {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(4px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

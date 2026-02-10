@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid p-0">
     <!-- ● 封面 Banner -->
-    <coverBanner class="mb-sm-2"></coverBanner>
+    <coverBanner ref="refBanner"></coverBanner>
 
     <!-- ● 導覽列 Nav -->
-    <div class="bg-white position-sticky top-0 z-3">
+    <div ref="refNavbar" id="navbar" class="position-sticky top-0 z-3">
       <navbar></navbar>
     </div>
 
@@ -15,8 +15,8 @@
           黃色：mcYellow #FCE158 252 225 88
     -->
     <!-- ● about me -->
-    <section id="about" class="m-auto mt-sm-5" style="max-width: 1000px;">
-      <div class="d-flex justify-content-center mt-3">
+    <section id="about">
+      <div class="content d-flex justify-content-center mt-3">
         <div class="row m-0">
           <div class="col-sm-6 p-0">
             <div class="row m-0 d-flex flex-sm-column">
@@ -42,36 +42,53 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 mt-4 mt-sm-0 p-0 d-flex flex-wrap justify-content-evenly">
+          <div class="h-fit-content col-sm-6 m-auto p-0 d-flex flex-wrap justify-content-evenly">
             <circleCard class="px-sm-3 px-2" v-for="(el, index) in skills" :key="index" :title="el.title" :icon="el.icon" :img="el.img"></circleCard>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ● 前端專題 PPT -->
-    <section id="ppt" class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25">
-      <div class="m-auto" style="max-width: 1000px; height:70vh;">
+    <!-- ● 在職實務專案 -->
+    <section id="practice">
+      <div class="content">
         <!-- Title -->
-        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 180px;">
-          <h4 class="z-1">前端專題｜PPT</h4>
-          <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+        <div class="d-flex">
+          <div class="section-title">
+            <h4 class="">在職實務專案</h4>
+          </div>
+          <p class="m-0 ms-3 text-myGray d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>在職期間完成的代表性系統與功能實作</p>
         </div>
-        <iframe class="my-4 ratio ratio-16x9" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="90%" src="https://reurl.cc/nvjDrX" allowfullscreen></iframe>
+
+        <div class="mt-5 px-5 d-flex gap-4 gap-md-3 gap-lg-4 flex-column flex-md-row justify-content-center align-items-center">
+          <itemCard v-for="(el, index) in practiceItem" :key="index" :id="el.id" :title="el.title" :img="el.img" :to="el.to"></itemCard>
+        </div>
+      </div>
+    </section>
+
+    <!-- ● 前端專題 PPT -->
+    <section id="ppt">
+      <div class="content">
+        <!-- Title -->
+        <div class="section-title">
+          <h4 class="">前端專題｜PPT</h4>
+        </div>
+
+        <iframe class="my-4 ratio ratio-16x9" src="https://reurl.cc/nvjDrX" allowfullscreen></iframe>
       </div>
     </section>
 
     <!-- ● 專題網站展示 -->
-    <section id="frontWeb" class="m-auto mt-5 py-3">
-      <div class="m-auto" style="max-width: 1000px;">
+    <section id="frontWeb">
+      <div class="content">
         <!-- Title -->
         <div class="d-flex">
-          <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 230px;">
-            <h4 class="z-1">前端專題｜Web 展示</h4>
-            <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+          <div class="section-title">
+            <h4 class="">前端專題｜Web 展示</h4>
           </div>
           <p class="m-0 ms-3 text-myGray fs-9 d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>若進入網頁無內容，請靜待 30 秒後，再重新載入頁面。</p>
         </div>
+
         <div class="position-relative my-4 ">
           <img class="w-100 object-fit-cover" src="@/assets/img/Dost_webPresentation_Banner.jpg">
           <div class="w-30 d-flex flex-wrap justify-content-center position-absolute top-50 end-0 translate-middle-y me-5">
@@ -84,21 +101,20 @@
       </div>
     </section>
 
-    <!-- ● jQ 小遊戲｜紓壓時鐘 -->
-    <section id="other" class="m-auto mt-5 py-5 bg-mcYellow bg-opacity-25">
-      <div class="m-auto h-sm-50 h-100" style="max-width: 1000px;">
+    <!-- ● 互動小作品 -->
+    <section id="other">
+      <div class="content h-sm-50">
         <!-- Title -->
-        <div class="position-relative d-flex justify-content-center w-auto" style="max-width: 90px;">
-          <h4 class="z-1">Other</h4>
-          <div class="bg-mcBlue position-absolute bottom-0 translate-middle-y" style="width: 100%; height: 12px;"></div>
+        <div class="section-title">
+          <h4 class="">互動小作品</h4>
         </div>
+
         <!-- items -->
-        <div class="d-flex flex-wrap justify-content-around">
+        <div class="mt-5 px-5 d-flex gap-4 gap-md-3 gap-lg-4 flex-column flex-md-row justify-content-center align-items-center">
           <itemCard v-for="(el, index) in items" :key="index" :id="el.id" :title="el.title" :img="el.img" :to="el.to"></itemCard>
         </div>
       </div>
     </section>
-
 
   </div>
 </template>
@@ -141,7 +157,14 @@ const skills = ref([
   { title: 'MongoDB', img: new URL('@/assets/logo_img/MongoDB_logo.png', import.meta.url).href },
 ])
 
+// ● 在職實務專案的項目資訊，包含標題、圖片、連結網址
+const practiceItem = ref([
+  { title: '澄新室內設計｜多頁式', img: 'https://cleardesigntwn.com/images/OG_img.jpg', to: 'https://cleardesigntwn.com/' },
+  { title: '六本設計｜一頁式', img: 'https://hemusih.com/6design-lab/images/OG_img.jpg', to: 'https://hemusih.com/6design-lab/' },
+  { title: '棠淩藝術美學｜一頁式', img: 'https://hemusih.com/tang-ling-art-studio/images/OG_img.jpg', to: 'https://hemusih.com/tang-ling-art-studio/' },
+])
 
+// ● 互動小作品的項目資訊，包含標題、圖片、連結網址
 const items = ref([
   { id: 'jQGame', title: 'jQ Game｜驅鬼小遊戲', img: new URL('../assets/gif/jQ_ExorciseGame_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240611_JS_HW_jQgame/' },
   { id: 'clock', title: '紓壓時鐘｜森林鐘', img: new URL('@/assets/gif/forestClock_gif.gif', import.meta.url).href, to: 'https://h-ty.github.io/20240416_JS_HW_clock/' },
@@ -167,30 +190,68 @@ const scrollNavbar = [
   },
 
   {
-    tab: "#jQGameTab",
-    trigger: "#jQGame",
+    tab: "#practiceTab",
+    trigger: "#practice",
   },
 
   {
-    tab: "#clockTab",
-    trigger: "#clock",
+    tab: "#otherTab",
+    trigger: "#other",
   },
 
-  {
-    tab: "#LineBotTab",
-    trigger: "#LineBot",
-  },
+  // {
+  //   tab: "#jQGameTab",
+  //   trigger: "#jQGame",
+  // },
+
+  // {
+  //   tab: "#clockTab",
+  //   trigger: "#clock",
+  // },
+
+  // {
+  //   tab: "#LineBotTab",
+  //   trigger: "#LineBot",
+  // },
 ]
+
+// ● 當 navbar 滾動貼到頂部時，添加樣式 .top-touch-top
+// 邏輯為當視窗滾動距離大於頂於 banner 的高度時，添加樣式；反之則移除樣式
+const refNavbar = ref(null)
+const refBanner = ref(null)
+const bannerHeight = computed(() => refBanner.value ? refBanner.value.$el.offsetHeight : 0)
+
+window.addEventListener('scroll', () => {
+  // console.log('window.scrollY', window.scrollY)
+  // console.log('bannerHeight', bannerHeight.value)
+
+  // * 手機版不觸發，只在 PC 版添加滾動事件
+  // if (window.innerWidth <= 425) {
+  //   return
+  // }
+
+  if (window.scrollY >= bannerHeight.value) {
+    refNavbar.value.classList.add('top-touch-top')
+  } else {
+    refNavbar.value.classList.remove('top-touch-top')
+  }
+})
+
+
+
+
 
 
 // 使用 onMounted 確定 DOM 已渲染完成，Gsap 才能抓到物件
 onMounted(() => {
+  // console.log('refNavbar', refNavbar.value) // 不是 vue 的元件，所以輸出會是 DOM 元素
+  // console.log('refBanner', refBanner.value) // 是 vue 的元件，所以輸出會是 VueComponent 的實例物件
+  // console.log('refBanner', refBanner.value.$el.offsetHeight)
 
   // 找出物件尺寸數值
   // const element = document.querySelector("#about");
   // const rect = element .getBoundingClientRect();
   // console.log('#about', rect )
-
 
   // 由滾動滑鼠觸發 navtab 的相對應位置
   // 將上述的陣列 scrollNavbar 做迴圈並帶入 key 值執行函數
@@ -199,7 +260,7 @@ onMounted(() => {
       gsap.to(tab, {
         scrollTrigger: {
           trigger: trigger,
-          start: "top 150px",
+          start: "top 80px",
           end: "bottom 150px",
           onToggle: (self) => {
             if (self.isActive) {
@@ -214,27 +275,13 @@ onMounted(() => {
       })
     })
   }
+
   // 延遲觸發 gsap 動畫，避免位置設定成元素初始化的位置，導致錯位
   setTimeout(() => {
     setGsap()
   }, 500);
+
 })
 
 
-
-
-
 </script>
-
-
-<style scoped>
-/* about me 文字顏色 */
-.list-group-item {
-  color: rgb(70, 76, 85);
-}
-
-/* about me 對話框字體效果 */
-.textShadow {
-  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-}
-</style>

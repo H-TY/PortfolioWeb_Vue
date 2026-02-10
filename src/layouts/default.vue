@@ -7,7 +7,7 @@
   <RouterView />
 
   <!-- ● footer 欄位 -->
-  <div id="footer" class="w-100 overflow-hidden position-relative d-flex justify-content-center" style="height: 150px;">
+  <div id="footer" class="w-100 overflow-hidden position-relative d-flex justify-content-center" style="height: 250px;">
     <!-- icon -->
     <div id="link" class="z-2 d-flex justify-content-between justify-content-lg-evenly align-items-center w-30" style="min-width: 150px;">
       <a href="https://github.com/H-TY" target="_blank">
