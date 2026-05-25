@@ -74,7 +74,7 @@
           <h4 class="">前端專題｜PPT</h4>
         </div>
 
-        <iframe class="my-4 ratio ratio-16x9" src="https://reurl.cc/nvjDrX" allowfullscreen></iframe>
+        <iframe class="my-4 ratio ratio-16x9" src="https://embed.figma.com/proto/806M1lDeM6sO2VI4MX8P6S/%E7%B6%B2%E7%AB%99%E5%B0%88%E9%A1%8C%E6%9C%9F%E6%9C%AB%EF%BC%9ADost-%E5%AF%B5%E7%89%A9%E7%8B%97%E9%99%AA%E4%BC%B4%E9%A0%90%E7%B4%84%E6%9C%8D%E5%8B%99?node-id=5324-1523&p=f&scaling=contain&content-scaling=fixed&page-id=5324%3A1522&embed-host=share" allowfullscreen></iframe>
       </div>
     </section>
 
