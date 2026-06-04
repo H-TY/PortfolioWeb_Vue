@@ -260,7 +260,7 @@ section {
 	padding: 6rem 0;
 	margin: auto;
 	position: relative;
-	scroll-margin-top: 44px;
+	scroll-margin-top: 40px;
 
 	&:last-of-type {
 		padding-bottom: 8rem;
@@ -452,10 +452,12 @@ section {
 
 	@media (max-width: 425px) {
 		.navbar-toggler {
+			width: 44px;
+			height: 44px;
 			line-height: 0.9;
 			border: none;
-			padding: 28px 0;
-			padding-bottom: 1.5rem;
+			padding: 0;
+			margin: 16px 0;
 
 			&:focus {
 				box-shadow: unset;
@@ -469,7 +471,7 @@ section {
 				align-items: center;
 
 				hr {
-					width: 48px;
+					width: 44px;
 					border-width: 2px;
 					border-color: $textColor2;
 					opacity: 0.6;
@@ -589,6 +591,24 @@ section {
 		height: 70vh;
 		border: 1px solid rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
+	}
+}
+
+// # 專題網站展示
+#frontWeb {
+	.box {
+		padding: 1rem;
+		padding-top: 1.5rem;
+
+		ul {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+
+			@media (max-width: 576px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
 	}
 }
 

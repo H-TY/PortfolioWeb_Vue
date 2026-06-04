@@ -32,12 +32,30 @@
               </div>
               <div class="col p-0">
                 <ul class="list-group list-group-flush AAA">
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>熟悉 HTML & CSS & JavaScript。</li>
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>應用 Bootstrap & Sass 刻版 RWD 網頁。</li>
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>jQuery 製作小遊戲。</li>
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>串接 google Api 製作 Line 機器人搜尋附近的餐廳。</li>
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>了解 Node.js & MongoDB。</li>
-                  <li class="list-group-item"><i class="pe-2 bi bi-pencil-fill"></i>Vue 框架建構網站 ＆ 前後端資料串接。</li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    熟悉 HTML / CSS / JavaScript。
+                  </li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    應用 Bootstrap & Sass 刻版 RWD 網頁。
+                  </li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    jQuery 製作小遊戲。
+                  </li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    串接 google Api 製作 Line 機器人搜尋附近的餐廳。
+                  </li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    基礎應用 Node.js & MongoDB。。
+                  </li>
+                  <li class="list-group-item">
+                    <i class="pe-2 bi bi-pencil-fill"></i>
+                    使用 Vue.js 建構網站，並搭配 Vuetify、Vue Router、Pinia 及 Axios 完成前後端串接與狀態管理。
+                  </li>
                 </ul>
               </div>
             </div>
@@ -53,11 +71,11 @@
     <section id="practice">
       <div class="content">
         <!-- Title -->
-        <div class="d-flex">
+        <div class="d-sm-flex">
           <div class="section-title">
             <h4 class="">在職實務專案</h4>
           </div>
-          <p class="m-0 ms-3 text-myGray d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>在職期間完成的代表性系統與功能實作</p>
+          <p class="m-0 ms-3 mt-2 mt-sm-0 text-myGray d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>在職期間完成的代表性系統與功能實作</p>
         </div>
 
         <div class="mt-5 px-5 d-flex gap-4 gap-md-3 gap-lg-4 flex-column flex-md-row justify-content-center align-items-center">
@@ -82,11 +100,26 @@
     <section id="frontWeb">
       <div class="content">
         <!-- Title -->
-        <div class="d-flex">
-          <div class="section-title">
-            <h4 class="">前端專題｜Web 展示</h4>
+        <div>
+          <div class="d-sm-flex">
+            <div class="section-title">
+              <h4 class="">前端專題｜Web 展示</h4>
+            </div>
+            <span class="m-0 ms-4 ms-sm-3 mt-2 mt-sm-0 text-myGray fs-8 d-inline-flex align-self-end">
+              <i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>
+              若進入網頁無內容，待 30 秒後重新載入頁面。
+            </span>
           </div>
-          <p class="m-0 ms-3 text-myGray fs-9 d-inline-flex align-self-end"><i class="bi bi-info-circle-fill me-1 text-myGray text-opacity-50"></i>若進入網頁無內容，請靜待 30 秒後，再重新載入頁面。</p>
+          <div class="box">
+            <ul>
+              <li>使用 Vue 3 建立單頁式應用（SPA）</li>
+              <li>透過 Vuetify 快速建構響應式使用者介面</li>
+              <li>使用 Vue Router 管理頁面導航與路由切換</li>
+              <li>使用 Pinia 管理全域狀態與資料共享</li>
+              <li>使用 Axios 串接後端 API</li>
+              <li>使用 MongoDB 儲存與管理網站資料</li>
+            </ul>
+          </div>
         </div>
 
         <div class="position-relative my-4 ">
